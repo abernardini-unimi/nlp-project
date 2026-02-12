@@ -1,0 +1,149 @@
+openapi: 3.0.3
+info:
+  title: MCP-Document API
+  description: API to manage services and database documents.
+  version: "1.0.0"
+
+servers:
+  - url: http://localhost:3000
+    description: Local development server
+
+tags:
+  - name: Resources
+    description: Operations on services (create, update, delete)
+
+paths:
+  /api/mcp/save_service:
+    post:
+      tags:
+        - Resources
+      summary: Create or Update a service
+      description: Create or update a service
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveServicePayload'
+      responses:
+        '201':
+          description: Service created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponse'
+        '400':
+          description: Error creating the service
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/mcp/delete_service:
+    post:
+      tags:
+        - Resources
+      summary: Delete a service
+      description: Removes a service from the MCP system.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteServicePayload'  
+      responses:
+        '200':
+          description: Service deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceResponse'
+        '400':
+          description: Error deleting the service
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    Document:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "doc1.txt"
+        chunk_size:
+          type: integer
+          example: 512
+        chunk_overlap:
+          type: integer
+          example: 50
+        min_chunk_size:
+          type: integer
+          example: 128
+      required:
+        - name
+        - chunk_size
+        - chunk_overlap
+        - min_chunk_size
+
+    SaveServicePayload:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Test Service"
+        description:
+          type: string
+          example: "Sample Test Service"
+        tokens:
+          type: array
+          items:
+            type: string
+          example: ["token123", "token456"]
+        customer_name:
+          type: string
+          example: "Customer1"
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document'
+      required:
+        - name
+        - description
+        - tokens
+        - customer_name
+
+    DeleteServicePayload:
+      type: object
+      properties:
+        service_name:
+          type: string
+          example: "Service1"
+        customer_name:
+          type: string
+          example: "Customer1"
+      required:
+        - service_name
+        - customer_name
+
+    ServiceResponse:
+      type: object
+      properties:
+        result:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: "Service saved successfully"
+
+    ErrorResponse:
+      type: object
+      properties:
+        result:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: "Error creating the service"
