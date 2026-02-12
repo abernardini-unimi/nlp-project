@@ -1,0 +1,36 @@
+**Modalità di pagamento**
+
+**Domiciliazione bancaria o postale (SDD):** Permette addebito diretto e automatico in conto corrente e restituzione del deposito cauzionale. Continuerai a ricevere la bolletta in anticipo rispetto all'addebito. Se risconti irregolarità con l'importo puoi richiedere la sospensione o il rimborso .
+
+**Click & Pay:** senza carte di credito, potrai scegliere di pagare una specifica bolletta tramite addebito diretto in conto corrente, attivando un mandato SDD. Disponibile fino a 12 giorni prima della scadenza.
+
+**MyBank:** Pagamento tramite online banking. Seleziona la bolletta e accedi al tuo servizio bancario per autorizzare il pagamento. Attivabile attraverso Servizi OnLine o dall'App. Maggiori informazioni su https://www.mybank.eu/it
+
+**Amazon Pay:** Utilizzo del tuo account Amazon per pagare la bolletta senza inserire i dati della carta. Disponibile dai Servizi OnLine e dall'App
+
+**Apple Pay:** Metodo esclusivo per dispositivi Apple. Paga con le carte associate al tuo Wallet. Maggiori informazioni su Apple Pay su https://www.apple.com/it/apple-pay
+
+**Jiffy/Bancomat Pay:** Pagamento tramite app mobile collegata al tuo conto bancario.l'addebito avviene direttamente sul tuo conto corrente bancario.disponibile via web dai Servizi OnLine e sul tuo smartphone dall'App. Maggiori informazioni su Jiffy/Bancomat Pay e sulle banche aderenti su http://jiffy.sia.eu/it
+
+**Paga con PostePay:** Utilizzo dell'app PostePay o carta di credito PostePay per il pagamento tramite smartphone. Disponibile via web dai Servizi OnLine e sul tuo smartphone dall'App. Maggiori informazioni su Paga con Postepay su https://www.poste.it/applicazione-postepay.html
+
+**Satispay:** Pagamento tramite l'app Satispay senza necessità di carte di credito. Disponibile via web dai Servizi OnLine e sul tuo smartphone dall'App. Maggiori informazioni su Satispay visita il sito https://www.satispay.com.
+
+**Carta di credito:** Pagamento tramite Visa, Mastercard, Maestro. Sicuro e gratuito, con conferma immediata. utilizzando la tua carta di credito o di debito (Visa, Mastercard, Maestro) emessa inItalia.
+L'opzione di pagamento con carte è disponibile via web dai Servizi OnLine e sul tuo smartphone dall'App. Sicurezza: Le transazioni di pagamento sono basate sull'algoritmo di criptazione SSL con chiavi a 128 bit, in grado di proteggere a livello applicativo la riservatezza e l'integrità dei dati relativi al pagamento. Tutte le operazioni relative al pagamento avverranno direttamente sulla piattaforma @POS (Atpos) del partner che ha scelto per questo servizio, SIA S.p.A. La società è tra i leader europei nelle aree del processing carte, dei sistemi di pagamento, dei mercati finanziari e dei servizi di rete. Maggiori informazioni su https://www.sia.eu.
+
+**CBILL:** Pagamento tramite canale CBILL della banca, anche via ATM o internet banking.Zero commissioni scegliendo gli sportelli evoluti (ATM /sportelli Bancomat) di Unicredit S.p.A. su territorio nazionale.Commissioni vantaggiose per i clienti Intesa Sanpaolo usando i canali online (Internet banking, Inbiz, App Intesa Sanpaolo). Scopri di più sul servizio CBILL guardando questo video https://www.youtube.com/watch?v=0YiKq4leBwk&feature=youtu.be o vai direttamente su www.cbill.it per maggiori informazioni sul servizio e sulle banche aderenti.
+
+**Coop:** Pagamento alle casse Coop tramite codice a barre. Limite importo: 999,99€ in contante, 1.499,99€ con carta. Commissioni vantaggiose per i soci Coop. Maggiori informazioni su www.e-coop.it.
+
+**Mooney:** Pagamento presso punti vendita, i bar, le tabaccherie e le edicole Mooney tramite codice a barre. Limite importo: 999,99€ in contante, 4.999,99€ con carta. Al termine dell'operazione sarà rilasciato uno scontrino valido come attestazione dell'avvenuto pagamento. Maggiori informazioni su punti Mooney, termini e condizioni su https://www.mooney.it.
+
+**PUNTOLIS:** Pagamento tramite tabaccherie,PUNTOLIS, edicole o bar convenzionati con LIS PAY S.p.A..Al termine dell'operazione sarà rilasciato uno scontrino valido come attestazione dell'avvenuto pagamento. Puoi pagare solo importi inferiori o uguali a 999,99€ in contanti e non superiori a 1.500,00€ con bancomat o carta di credito o prepagate VISA o Mastercard (dove accettate). Entrambi gli importi menzionati sono da considerarsi comprensivi della commissione. Il servizio è fornito da LIS Pay S.p.A.. Maggiori info, condizioni economiche, trasparenza e privacy su www.lispay.it.
+
+**Poste Italiane:** Pagamento del bollettino postale, , allegato alla fattura, presso uffici postali in contante o con carta.Conserva la ricevuta come attestazione dell'avvenuto pagamento. Per maggiori informazioni su costi e localizzazione degli sportelli visita il sito www.poste.it.
+
+**Sportelli automatici UniCredit (ATM):** Pagamento gratuito tramite CBILL presso ATM UniCredit. Per la convenzione gratuita è necessario selezionare l'apposita funzione di pagamento delle bollette con CBILL. Tutti gli sportelli ATM/Bancomat Unicredit accettano carte di pagamento, mentre gli sportelli evoluti accettano anche il contante (la funzionalità è sempre indicata nello sportello). Per maggiori informazioni sugli sportelli visita il sito www.unicredit.it.
+
+**Sportelli bancari convenzionati:** Pagamento presso sportelli bancari con bollettino postale,allegato alla fattura senza spese aggiuntive.
+
+**Bonifico bancario:** Pagamento tramite bonifico, utilizzando l'IBAN di UniCredit SpA stampato nella tua fattura e indicando nella causale il codice cliente e il nominativo dell'intestatario della fornitura, il/i numero/i bolletta o il "Codice raggruppamento contratto" che trovi in bolletta. La mancanza dei dati sopraindicati può causare il ritardo o la sospensione della registrazione del pagamento.

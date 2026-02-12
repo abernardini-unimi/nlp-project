@@ -1,0 +1,43 @@
+**Rateizzazione la bolletta**
+
+Per rateizzare la bolletta, devi avere meno di 3 piani di rientro attivi. offriamo eccezioni per clienti in difficoltà.
+La rateizzazione non è possibile per chi ha il contatore chiuso per morosità, fatture in recupero crediti, bollette con importo maggiore a 100€ scadute da oltre 60 giorni o importo superiore a 100€, precedenti piani di rientro annullati, o più di 3 piani di rientro.
+
+Puoi procedere con la richiesta tramite la webApp che ti verrà fornita a fine chiamata. Avrai bisogno di 
+
+- Dati anagrafici.
+- Codice POD (energia) o PDR (gas).
+- Indirizzo di fornitura.
+
+Il piano di rateizzazione prevede 3 rate mensili, salvo eccezioni. Per i non residenti, è richiesto un acconto di 1/3 del totale dell'importo da rateizzare. Le eccezioni sono:
+
+- 6 mesi senza interessi per clienti in difficoltà economica (in cassa integrazione ordinaria e straordinaria, con riduzione dell'orario lavorativo maggiore al 30%, iscritti alla lista di mobilità o presenti nell'elenco della Direzione provinciale del lavoro che si occupa di reintrodurre soggetti che hanno perso il lavoro), o disoccupati per riduzione o chiusura dell'attività, oppure con contratto a tempo determinato superiore a 6 mesi poi cessato.
+
+- Fino a 9 mesi per quelli con assistenza sociale previa segnalazione dell'ente competente via mail.
+
+Vengono accettati avvisi di pagamento e l'aggiunta delle rate in bolletta. Esclude la domiciliazione bancaria e i pagamenti automatici con carte di credito, che devono essere disattivati prima della richiesta.
+
+Anche i clienti con bonus sociale possono richiedere la rateizzazione, con possibili agevolazioni aggiuntive.
+
+I dati necessari durante la procedura per la rateizzazione sono :
+
+- Dati anagrafici dell'intestatario della fornitura.
+- Codice POD per l'energia elettrica.
+- Codice PDR per il gas.
+- Indirizzo di fornitura.
+
+Dopo la richiesta verrà inviato il piano di rientro (o piano rate) , un documento in cui si stabilisce l'arco temporale di restituzione, la periodicità con cui saldare l'importo e la divisione della cifra in rate.
+
+I metodi di pagamento ammessi con il piano di rientro sono:
+
+- Avvisi di pagamento.
+- Aggiunta della rata in bolletta.
+
+Invece, sono esclusi:
+
+- Domiciliazione bancaria.
+- Pagamenti automatici con carte di credito.
+
+In questi casi è necessario bloccare l'addebito automatico prima di richiedere la rateizzazione.
+
+<br>
