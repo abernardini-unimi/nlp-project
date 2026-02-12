@@ -1,0 +1,482 @@
+[
+    {
+      "id": 1,
+      "question": "Qual è la frequenza di fatturazione prevista per i clienti privati rispetto a quelli business?",
+      "answer": "I clienti privati ricevono le fatture ogni 30 giorni, mentre per i clienti Business l'emissione avviene ogni 15 giorni.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 2,
+      "question": "Qual è la procedura per confermare la validità dell'IBAN inserito durante l'acquisto?",
+      "answer": "Bisogna attendere l'accredito di due bonifici di pochi centesimi sul conto (entro 15 giorni), accedere all'Area Riservata, cliccare su 'Valida IBAN' e inserire gli importi ricevuti.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 3,
+      "question": "Cosa devo fare per ottenere le agevolazioni Area C se sono residente a Milano?",
+      "answer": "È necessario registrare preventivamente il veicolo sulla piattaforma MyAreaC per ottenere un PIN che attivi gli sconti sulla targa; successivamente l'importo addebitato da UnipolMove sarà quello agevolato.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 4,
+      "question": "Quali sono i requisiti per utilizzare il dispositivo di telepedaggio su una moto?",
+      "answer": "La moto deve avere una cilindrata uguale o superiore a 150 c.c. e, durante il transito al casello, è necessario seguire la segnaletica a terra indicata dal simbolo giallo della moto.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 5,
+      "question": "È possibile utilizzare il servizio di soccorso stradale UnipolAssistance se mi trovo all'estero?",
+      "answer": "No, il servizio di soccorso stradale è disponibile esclusivamente sul territorio italiano.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 6,
+      "question": "Quanto dura la garanzia offerta da UnipolGlass sulla sostituzione dei vetri?",
+      "answer": "La garanzia ha una durata di 2 anni ed è valida per difetti di montaggio o installazione in qualsiasi centro in Italia, a patto che il vetro non venga manipolato da estranei al circuito.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 7,
+      "question": "Quali metodi di pagamento sono accettati per i servizi nell'app UnipolMove CITY?",
+      "answer": "Sono accettate le principali carte di credito, carte di debito (o combinazione debito/credito), Apple Pay e Poste Pay.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 8,
+      "question": "Come devo comportarmi se la sbarra di un parcheggio convenzionato non si apre e sono costretto a ritirare il biglietto?",
+      "answer": "Bisogna rivolgersi al gestore del parcheggio mostrando il biglietto e comunicando la targa. Il gestore annullerà il biglietto e caricherà la sosta sul sistema UnipolMove per permettere il pagamento automatico.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 9,
+      "question": "In quali casi tecnici non è possibile riparare un parabrezza ma è necessaria la sostituzione?",
+      "answer": "Non si può riparare se il danno è nel campo visivo del conducente, se è presente una crepa, se il danno è a meno di 5 cm dal bordo, se supera i 2,5 cm di diametro o se si trova nell'area delle telecamere ADAS.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 10,
+      "question": "Qual è il numero massimo di dispositivi associabili per un cliente Small Business?",
+      "answer": "I clienti Small Business possono associare al proprio contratto fino a 30 dispositivi.",
+      "type": "assicurazione"
+    },
+    {
+      "id": 11,
+      "question": "Quali limitazioni ci sono per la rateizzazione della bolletta?",
+      "answer": "La rateizzazione non è concessa se il contatore è chiuso per morosità, ci sono fatture in recupero crediti, bollette scadute da oltre 60 giorni con importo superiore a 100€, precedenti piani annullati o più di 3 piani attivi.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 12,
+      "question": "Come avviene il rimborso se ho pagato più del dovuto e non ho debiti?",
+      "answer": "Se l'importo è inferiore a 3 euro, riceverai un credito sulla bolletta successiva. Per importi superiori, verrà emesso un assegno.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 13,
+      "question": "Quali sono i costi per attivare una fornitura di gas con un contatore fino a G6?",
+      "answer": "Il costo è di €30 + IVA, a cui si aggiungono €47 + IVA per l'accertamento (impianti fino a 35 kW), €25 + IVA per i diritti fissi del venditore e i costi del distributore.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 14,
+      "question": "È possibile pagare la bolletta alle casse del supermercato?",
+      "answer": "Sì, è possibile pagare alle casse Coop tramite codice a barre, con un limite di 999,99€ in contanti e 1.499,99€ con carta.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 15,
+      "question": "Cosa devo fare per attivare un contatore del gas già installato?",
+      "answer": "Devi fornire i dati richiesti (tra cui PDR e matricola), compilare gli allegati H/40 e I/40 e attendere l'accertamento del distributore, che fisserà un appuntamento entro 10 giorni lavorativi.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 16,
+      "question": "Posso continuare a usare la domiciliazione bancaria se chiedo la rateizzazione?",
+      "answer": "No, la domiciliazione bancaria e i pagamenti automatici con carta di credito devono essere disattivati prima di richiedere la rateizzazione.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 17,
+      "question": "Quanto tempo ho per pagare una bolletta prima che venga inviato un preavviso di sospensione?",
+      "answer": "Il preavviso di sospensione viene inviato se il pagamento non avviene entro 20 giorni dalla scadenza della bolletta.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 18,
+      "question": "Quali opzioni di pagamento digitale non richiedono l'uso diretto di una carta di credito?",
+      "answer": "Puoi utilizzare MyBank (bonifico online), Satispay (app mobile), Amazon Pay (account Amazon), Apple Pay (wallet Apple), Jiffy/Bancomat Pay o Click & Pay (addebito diretto).",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 19,
+      "question": "Cosa succede se il cliente ha sia debiti che crediti nei confronti del fornitore?",
+      "answer": "Viene effettuata una compensazione. Se il saldo finale è a credito, il cliente riceve un assegno; se è a debito, riceve un bollettino postale con l'importo residuo da pagare.",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 20,
+      "question": "Come viene calcolata la frequenza delle bollette per l'energia elettrica?",
+      "answer": "Per potenze fino a 16,5 kW si ricevono 6 bollette l'anno (bimestrali), mentre per potenze superiori le bollette sono 12 (mensili).",
+      "type": "fornitore_gas_luce"
+    },
+    {
+      "id": 21,
+      "question": "Il cambio delle lenzuola e degli asciugamani è compreso nel prezzo della prenotazione?",
+      "answer": "No, la pulizia finale e la prima fornitura di biancheria sono incluse, ma per il cambio delle lenzuola e degli asciugamani è richiesto un costo extra.",
+      "type": "hotel"
+    },
+    {
+      "id": 22,
+      "question": "Quali sono le aree del villaggio in cui è vietato l'accesso ai cani?",
+      "answer": "I cani non possono entrare nell'area delle piscine, nelle zone sportive, nei parchi giochi e nei ristoranti.",
+      "type": "hotel"
+    },
+    {
+      "id": 23,
+      "question": "Qual è il costo per un visitatore giornaliero adulto che non pernotta nella struttura?",
+      "answer": "Il costo per l'ingresso giornaliero di un adulto è di € 15, previa prenotazione online e verifica della disponibilità.",
+      "type": "hotel"
+    },
+    {
+      "id": 24,
+      "question": "In quale periodo dell'anno 2026 rimangono aperte le camere dell'Hotel La Diga?",
+      "answer": "Le camere dell'Hotel La Diga sono aperte dal 30 marzo al 9 ottobre.",
+      "type": "hotel"
+    },
+    {
+      "id": 25,
+      "question": "Cosa devo fare se ho necessità di lasciare l'alloggio dopo l'orario standard di check-out delle 10:00?",
+      "answer": "È necessario recarsi in reception la sera prima della partenza per verificare i prezzi e la disponibilità per un check-out posticipato.",
+      "type": "hotel"
+    },
+    {
+      "id": 26,
+      "question": "La tessera sanitaria è accettata come documento valido per la registrazione all'arrivo?",
+      "answer": "No, la tessera sanitaria non è ritenuta un documento valido al fine del riconoscimento. È necessaria la carta d'identità (cittadini UE) o il passaporto (cittadini extra-UE) in originale.",
+      "type": "hotel"
+    },
+    {
+      "id": 27,
+      "question": "Se arrivo al villaggio la mattina, posso utilizzare il parco acquatico prima di aver ricevuto le chiavi dell'alloggio?",
+      "answer": "Sì, l'ingresso nel villaggio e l'utilizzo di tutti i servizi (incluso il parco acquatico) è consentito dalle ore 10:00 del giorno di arrivo, anche se la consegna delle chiavi avviene dalle 16:00.",
+      "type": "hotel"
+    },
+    {
+      "id": 28,
+      "question": "Quale autobus devo prendere per raggiungere il villaggio dall'aeroporto di Verona o dalla stazione di Peschiera?",
+      "answer": "Bisogna prendere l'autobus della linea 482 fino alla fermata 'Salionze - Bivio Diga'.",
+      "type": "hotel"
+    },
+    {
+      "id": 29,
+      "question": "Con quanto anticipo devo prenotare il servizio di transfer in taxi tramite email?",
+      "answer": "È necessario richiedere il transfer scrivendo una mail con almeno 48 ore di anticipo.",
+      "type": "hotel"
+    },
+    {
+      "id": 30,
+      "question": "Quali dati sono necessari per completare la procedura di Check-in Online sul sito?",
+      "answer": "Per il Check-in Online è necessario inserire il numero di prenotazione (trovato nell'email di conferma), le date di arrivo e partenza, e compilare i campi dati propri e degli accompagnatori.",
+      "type": "hotel"
+    },
+    {
+      "id": 31,
+      "question": "Cosa si intende con il termine 'HumanTouchnology' utilizzato da Increso?",
+      "answer": "È l'approccio che unisce tecnologie all'avanguardia e fattore umano per valorizzare l'assistenza al cliente, garantendo una Customer Experience unica.",
+      "type": "increso"
+    },
+    {
+      "id": 32,
+      "question": "Qual è il tasso di turnover annuo del personale registrato da Increso?",
+      "answer": "Increso registra un tasso di turnover annuo molto basso, pari al 2%, indice di un ambiente di lavoro positivo.",
+      "type": "increso"
+    },
+    {
+      "id": 33,
+      "question": "Su quale infrastruttura cloud si basa la piattaforma Inxide e dove è localizzata?",
+      "answer": "La piattaforma si basa su infrastruttura Amazon AWS (Amazon Web Services) con region a Milano, distribuita su 3 data center (availability zones).",
+      "type": "increso"
+    },
+    {
+      "id": 34,
+      "question": "Quali sono le quattro tipologie di 'agenti del futuro' secondo il framework di Gartner citato negli articoli?",
+      "answer": "Le quattro tipologie sono: Efficiency Experts, Personalization Specialists, Resolution Supervisors ed Exceptional Interventionists.",
+      "type": "increso"
+    },
+    {
+      "id": 35,
+      "question": "Qual è il punteggio di Customer Satisfaction Index (CSI) vantato dall'azienda?",
+      "answer": "Increso vanta un punteggio CSI pari a 9,2.",
+      "type": "increso"
+    },
+    {
+      "id": 36,
+      "question": "In che modo la soluzione 'Business App' interagisce con i sistemi legacy dell'azienda cliente?",
+      "answer": "Le WebApp permettono di digitalizzare i processi minimizzando gli interventi sui sistemi legacy, evitando laboriose customizzazioni sui sistemi aziendali esistenti.",
+      "type": "increso"
+    },
+    {
+      "id": 37,
+      "question": "Quali lingue sono parlate dalle risorse del Contact Center di Increso?",
+      "answer": "Le risorse parlano italiano, inglese, francese e spagnolo.",
+      "type": "increso"
+    },
+    {
+      "id": 38,
+      "question": "A quanto ammonta il fatturato di Increso riportato nel bilancio approvato del 2024?",
+      "answer": "Il fatturato riportato nel bilancio 2024 è pari a 6 milioni di euro.",
+      "type": "increso"
+    },
+    {
+      "id": 39,
+      "question": "Quali certificazioni possiede Increso in ambito di sicurezza delle informazioni e servizi Cloud?",
+      "answer": "Increso possiede le certificazioni ISO 27001 (con estensioni ISO 27017 e ISO 27018) e la CSA STAR Level 1.",
+      "type": "increso"
+    },
+    {
+      "id": 40,
+      "question": "Chi sono alcuni dei principali partner tecnologici con cui collabora Increso?",
+      "answer": "Tra i partner figurano OpenAI, LLaMa by Meta, Azure, Gemini, Anthropic, AWS, Google, Kubernetes, mongo DB, Docker, Nexi e Net2phone.",
+      "type": "increso"
+    },
+    {
+      "id": 41,
+      "question": "Chi è il proprietario e gestore del sito web Amazon.it?",
+      "answer": "Il sito web è di proprietà ed è gestito da Amazon Europe Core SARL.",
+      "type": "amazon"
+    },
+    {
+      "id": 42,
+      "question": "In quale momento preciso si considera concluso il contratto di vendita tra l'utente e Amazon EU Sarl?",
+      "answer": "Il contratto si conclude solo nel momento in cui Amazon invia l'e-mail di 'Conferma della spedizione' o pubblica un messaggio di accettazione dell'offerta di acquisto nel Centro comunicazioni.",
+      "type": "amazon"
+    },
+    {
+      "id": 43,
+      "question": "Qual è il termine temporale previsto dalla legge per esercitare il diritto di recesso?",
+      "answer": "L'utente ha il diritto di recedere dall'ordine, senza fornire motivazioni, entro 14 giorni dal giorno del ricevimento del prodotto o dalla conclusione del contratto.",
+      "type": "amazon"
+    },
+    {
+      "id": 44,
+      "question": "Per quanto tempo è valida la Garanzia legale di conformità per i prodotti acquistati da un consumatore?",
+      "answer": "Amazon risponde dei difetti di conformità che si manifestano entro il termine di due anni dalla data di avvenuta consegna del bene.",
+      "type": "amazon"
+    },
+    {
+      "id": 45,
+      "question": "Quali sono le condizioni per l'utilizzo dei Servizi Amazon da parte di un minore di 18 anni?",
+      "answer": "Se l'utente ha meno di 18 anni, può utilizzare i Servizi Amazon esclusivamente con il coinvolgimento di un genitore o di un tutore.",
+      "type": "amazon"
+    },
+    {
+      "id": 46,
+      "question": "In caso di discrepanze tra la versione italiana delle Condizioni di vendita e una sua traduzione, quale prevale?",
+      "answer": "In caso di incongruenze, discrepanze o conflitti tra le versioni, prevarrà la versione in lingua Italiana.",
+      "type": "amazon"
+    },
+    {
+      "id": 47,
+      "question": "Dove si trova la sede legale di Amazon EU SARL?",
+      "answer": "La sede legale si trova al numero 38 di avenue John F. Kennedy, L-1855 Lussemburgo.",
+      "type": "amazon"
+    },
+    {
+      "id": 48,
+      "question": "Cosa accade se Amazon non agisce immediatamente a fronte di un inadempimento dell'utente alle Condizioni di vendita?",
+      "answer": "Il mancato esercizio immediato del diritto di agire non rappresenta una rinuncia di Amazon ad agire successivamente per la violazione degli obblighi assunti dall'utente.",
+      "type": "amazon"
+    },
+    {
+      "id": 49,
+      "question": "Qual è l'importo del capitale sociale di Amazon EU SARL indicato nel documento?",
+      "answer": "Il capitale sociale di Amazon EU SARL è pari a 125.000 EUR.",
+      "type": "amazon"
+    },
+    {
+      "id": 50,
+      "question": "Qual è il presupposto fondamentale per essere vincolati alle Condizioni d'uso di Amazon?",
+      "answer": "L'utilizzo dei Servizi Amazon implica l'accettazione integrale di essere vincolati alle presenti Condizioni d'uso.",
+      "type": "amazon"
+    },
+    {
+      "id": 51,
+      "question": "Qual è lo scopo principale del documento 'ETSY: LA GUIDA FISCALE'?",
+      "answer": "Il documento ha uno scopo puramente informativo ed educativo per aiutare i venditori a operare su Etsy nel rispetto delle normative fiscali e contributive.",
+      "type": "etsy"
+    },
+    {
+      "id": 52,
+      "question": "Quali dotazioni sono necessarie per iniziare l'attività di vendita sulla piattaforma Etsy?",
+      "answer": "Per iniziare sono necessari un computer, una connessione Internet, un conto bancario e una carta di credito, strumenti fondamentali anche per la verifica dell'identità.",
+      "type": "etsy"
+    },
+    {
+      "id": 53,
+      "question": "Come viene gestita la logistica e lo stoccaggio dei prodotti venduti su Etsy?",
+      "answer": "Poiché Etsy non dispone di un magazzino proprio, è responsabilità esclusiva del venditore provvedere allo stoccaggio dei prodotti e alla loro spedizione.",
+      "type": "etsy"
+    },
+    {
+      "id": 54,
+      "question": "Quale supporto offre Riccardo Allievi ai venditori che operano online?",
+      "answer": "In qualità di commercialista, assiste i venditori nel corretto inquadramento fiscale, puntando a ottimizzare il carico fiscale e a calcolare la reale marginalità dei prodotti.",
+      "type": "etsy"
+    },
+    {
+      "id": 55,
+      "question": "Su quali canali è possibile consultare gli approfondimenti quotidiani dello Studio Allievi?",
+      "answer": "Lo studio pubblica regolarmente contenuti informativi sul sito ufficiale e sui canali social YouTube, Facebook, Instagram, LinkedIn e TikTok.",
+      "type": "etsy"
+    },
+    {
+      "id": 56,
+      "question": "Quali tipi di prodotti è possibile vendere sulla piattaforma Etsy?",
+      "answer": "Su Etsy è possibile vendere prodotti realizzati a mano, oggetti usati o vintage, oppure articoli appartenenti alla categoria 'fai da te'.",
+      "type": "etsy"
+    },
+    {
+      "id": 57,
+      "question": "Qual è il consiglio dell'autore riguardo agli aspetti contabili e fiscali della vendita online?",
+      "answer": "L'autore consiglia di affidarsi a un professionista specializzato nel settore per scegliere il regime fiscale adeguato e gestire la contabilità.",
+      "type": "etsy"
+    },
+    {
+      "id": 58,
+      "question": "Cosa deve includere la 'vetrina di vendita' creata dal venditore su Etsy?",
+      "answer": "La vetrina deve permettere al potenziale acquirente di conoscere i prodotti, le loro caratteristiche e il relativo prezzo di vendita.",
+      "type": "etsy"
+    },
+    {
+      "id": 59,
+      "question": "In che modo l'autore definisce la validità dei pareri espressi nella guida?",
+      "answer": "Il parere dell'autore non sostituisce quello legale o fiscale e non è oggettivamente applicabile a ogni singolo caso personale o imprenditoriale.",
+      "type": "etsy"
+    },
+    {
+      "id": 60,
+      "question": "Perché Etsy richiede al venditore di fornire un conto bancario e una carta di credito?",
+      "answer": "Servono per verificare l'identità del venditore, pagare le fatture di Etsy e ricevere i proventi delle vendite effettuate.",
+      "type": "etsy"
+    },
+    {
+      "id": 61,
+      "question": "Per quale versione del software è stato scritto il manuale utente dell'iPhone allegato?",
+      "answer": "Il manuale è stato scritto specificamente per il software iOS 8.",
+      "type": "apple"
+    },
+    {
+      "id": 62,
+      "question": "Quali accessori sono inclusi nella confezione dell'iPhone secondo il manuale?",
+      "answer": "Gli accessori includi sono gli Auricolari Apple (EarPods con telecomando e microfono), un cavo USB (Lightning o a 30 pin) e l'alimentatore USB.",
+      "type": "apple"
+    },
+    {
+      "id": 63,
+      "question": "Quali sono le tre opzioni disponibili per attivare un iPhone?",
+      "answer": "L'attivazione può essere effettuata tramite una rete Wi-Fi, attraverso la rete cellulare del proprio gestore oppure collegando il dispositivo al computer e utilizzando iTunes.",
+      "type": "apple"
+    },
+    {
+      "id": 64,
+      "question": "Che cos'è l'ID Apple e a cosa serve?",
+      "answer": "L'ID Apple è l'account necessario per la maggior parte delle funzionalità Apple, come l'archiviazione su iCloud, lo scaricamento di app dall'App Store e l'acquisto di contenuti su iTunes Store.",
+      "type": "apple"
+    },
+    {
+      "id": 65,
+      "question": "Quali sono i requisiti minimi per collegare l'iPhone a un PC Windows?",
+      "answer": "È necessario un PC con porta USB 2.0 o 3.0 e sistema operativo Windows 8, Windows 7, Windows Vista o Windows XP (Home o Professional) con Service Pack 3 o superiore.",
+      "type": "apple"
+    },
+    {
+      "id": 66,
+      "question": "Quale funzione viene attivata automaticamente nel momento in cui si accede a iCloud sull'iPhone?",
+      "answer": "Accedendo a iCloud viene attivata automaticamente la funzione 'Trova il mio iPhone'.",
+      "type": "apple"
+    },
+    {
+      "id": 67,
+      "question": "In quale ordine l'iPhone prova a connettersi a Internet quando un'app ne ha bisogno?",
+      "answer": "Si connette prima alla rete Wi-Fi disponibile utilizzata più recentemente, poi alle altre reti Wi-Fi nel raggio e infine alla rete dati cellulare.",
+      "type": "apple"
+    },
+    {
+      "id": 68,
+      "question": "Come è possibile configurare una base AirPort utilizzando direttamente l'iPhone?",
+      "answer": "È necessario andare in Impostazioni > Wi-Fi e selezionare la voce 'Configura una base AirPort' sotto l'elenco delle reti disponibili.",
+      "type": "apple"
+    },
+    {
+      "id": 69,
+      "question": "Cosa deve fare l'utente prima di vendere o regalare il proprio iPhone?",
+      "answer": "L'utente deve inizializzare il dispositivo per rimuovere i dati personali e disattivare la funzione 'Blocco attivazione'.",
+      "type": "apple"
+    },
+    {
+      "id": 70,
+      "question": "Quali versioni di OS X sono supportate per l'utilizzo dell'iPhone con il computer?",
+      "answer": "È necessario un Mac con OS X 10.6.8 o versione successiva.",
+      "type": "apple"
+    },
+    {
+      "id": 71,
+      "question": "In che anno è stata lanciata l'app di WhatsApp e quando è stata acquistata dal gruppo Facebook (ora Meta)?",
+      "answer": "WhatsApp è stata lanciata nel 2009 ed è stata acquistata dal gruppo Facebook nel 2014.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 72,
+      "question": "Quali sono i requisiti minimi di sistema per installare WhatsApp su Android e iPhone?",
+      "answer": "L'app richiede Android versione 4.1 o successive, oppure iPhone con sistema operativo iOS 10 o versioni successive.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 73,
+      "question": "Qual è il limite massimo di partecipanti che può avere un gruppo WhatsApp secondo la guida?",
+      "answer": "È possibile creare gruppi di utenti che contengono fino a 256 partecipanti.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 74,
+      "question": "Quale tecnologia viene utilizzata da WhatsApp per garantire la privacy delle chat?",
+      "answer": "WhatsApp utilizza la crittografia end-to-end per proteggere le conversazioni degli utenti.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 75,
+      "question": "Cosa sono i messaggi effimeri menzionati nel documento di WhatsApp?",
+      "answer": "Sono messaggi che si autodistruggono, includendo anche foto e video che vengono eliminati automaticamente dopo una sola visualizzazione.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 76,
+      "question": "Quali tipologie di file è possibile inviare come allegati su WhatsApp?",
+      "answer": "Oltre a foto e video, è possibile inviare messaggi vocali, GIF, documenti e contatti telefonici.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 77,
+      "question": "Quali reti di connessione mobile supporta WhatsApp per l'invio di messaggi?",
+      "answer": "L'applicazione supporta le reti mobili 3G, 4G e 5G, oltre alla connessione Wi-Fi.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 78,
+      "question": "Con quali altre piattaforme social è possibile integrare un account WhatsApp Business?",
+      "answer": "WhatsApp Business è integrabile con le pagine Facebook e i profili aziendali di Instagram.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 79,
+      "question": "In che modo la funzione 'carrello' aiuta gli acquisti su WhatsApp Business?",
+      "answer": "Permette ai clienti di aggiungere più prodotti e procedere all'ordine con un unico messaggio, velocizzando la transazione commerciale.",
+      "type": "whatsapp"
+    },
+    {
+      "id": 80,
+      "question": "Qual è il numero di utenti mondiali che WhatsApp dichiarava di avere nel momento descritto dalla guida?",
+      "answer": "WhatsApp conta oggi su un bacino di oltre 2 miliardi di utenti a livello mondiale.",
+      "type": "whatsapp"
+    }
+]

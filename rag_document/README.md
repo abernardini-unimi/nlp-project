@@ -12,11 +12,9 @@ An **optimized Retrieval-Augmented Generation (RAG) pipeline** featuring:
 ## 📂 Project Structure
 
 ```bash
-├── api/                    # Api structure
+├── api/                    # Api component functions
 ├── config/                 # Configurations and environment variables
-│   ├── logger.py           # Logger setup
-│   └── settings.py         # General settings and env vars
-├── db/                     # Database functions 
+├── db/                     # Database component functions 
 ├── docs/                   # Source documents for ingestion
 ├── logs/                   # Local Logs folder by days
 ├── mcp_server/             # MCP Server folder
