@@ -1,0 +1,55 @@
+# Ambiente virtuale
+venv/
+.venv/
+.env
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Notebook e Jupyter
+.ipynb_checkpoints/
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Log e temporanei
+*.log
+*.tmp
+*.bak
+
+# Database locali
+*.sqlite3
+*.db
+
+# File di dati
+*.pkl
+*.faiss
+
+# Archivi
+*.tar
+*.tar.gz
+*.zip
+*.gz
+
+# Build e distribuzione Python
+build/
+dist/
+*.egg-info/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Configurazioni specifiche
+services_config.json
+
+# Vectortstore locali
+vectorstore/
+vectorstore_base/
+vectorstore_50/
+vectorstore_200/
+vectorstore_100/
+vectorstore_150/
