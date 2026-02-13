@@ -1,194 +1,173 @@
-# 📚⚡ RAG-DOCUMENT
+# 🧠 RAG-Document
 
-An **optimized Retrieval-Augmented Generation (RAG) pipeline** featuring:
+Un sistema avanzato di Retrieval-Augmented Generation (RAG) progettato per gestire multipli flussi documentali. Il progetto espone un'architettura ibrida che supporta sia API REST tradizionali sia un **Server MCP (Model Context Protocol)** per l'interazione diretta con agenti AI autonomi.
 
-* 🔍 **Hybrid retriever** → BM25 + semantic embeddings
-* 🧩 **Advanced chunking** → hybrid document segmentation strategy
-* 🧠 **End-to-end pipeline** → ingestion, retrieval, and generation
-* ⚡ **Modular architecture** → independent and reusable components
+## 🏗️ Architettura del Sistema
+
+<p align="center">
+  <img src="img/img.png" width="400">
+</p>
+
+Il sistema è orchestrato da un componente centrale (**Manager**) che gestisce il flusso di dati tra gli input, gli agenti e i database.
+
+* **🤖 MCP Server:** Autentica e instrada le richieste di agenti multipli utilizzando un sistema di token verification.
+* **🧠 Core Manager:** Il "cervello" dell'applicazione. Crea e gestisce le pipeline, valuta le query e decide quale pipeline di retrieval o elaborazione attivare.
+* **🌐 API Server:** Espone gli endpoint tramite FastAPI per la creazione ed eliminazione dei vector store.
+* **🗄️ Neo4j Database:** Utilizza un database a grafi per memorizzare l'istantanea dei vector store creati.
 
 ---
 
-## 📂 Project Structure
+## ✨ Funzionalità Principali
 
-```bash
-├── api/                    # Api component functions
-├── config/                 # Configurations and environment variables
-├── db/                     # Database component functions 
-├── docs/                   # Source documents for ingestion
-├── logs/                   # Local Logs folder by days
-├── mcp_server/             # MCP Server folder
-├── src/                    # Core source code
-│   ├── chunker.py          # Hybrid chunking strategy
-│   ├── classes.py          # Complete RAG pipeline implementation
-│   ├── pipeline.py         # Semantic search pipeline
-│   ├── service_manager.py  # Multi Service Handler
-│   ├── retriever.py        # Hybrid retriever (BM25 + embeddings)
-│   ├── utils.py            # Utility functions
-│   └── text_processor.py   # Optimized text preprocessor
-├── tests/                  # Unit & integration tests
-│   └── test_muliservice.py # Multi service test system
-├── vectorstore/            # Persisted vector indexes and chunks
-├── requirements.txt        # Python dependencies
-├── .env.example            # Example environment variables
-├── setup_ubuntu.sh         # Script for automatic setup ubuntu environment
-├── setup_windows.sh        # Script for automatic setup windows environment
-├── Dockerfile
-├── .gitignore
-└── README.md
+* Gestione di più richieste in parallelo da parte degli agenti.
+* Sistema di cache intelligente per caricare in memoria solo i vector store più usati dagli agenti.
+* Sistema di confronto tra varie tecniche di RAG avanzate, tra cui:
+  * **Sparse (BM25)**
+  * **Semantic**
+  * **Hybrid Retriever**
+  * **Contextual Header**
+  * **Hierarchical Indices**
+  * **Multi-Query RAG**
+  * **Parent Document**
+  * **Query Transformations**
+  * **Relevant Segment Extraction**
+  * **Reranking**
+
+---
+
+## 📁 Struttura del Progetto
+
+```text
+rag_document/
+├── api/                # Endpoint FastAPI, schemi e router
+├── config/             # Impostazioni di sistema e configurazione logger
+├── db/                 # Connessioni e script di setup per Neo4j/Vector DB
+├── docs/               # Cartella di ingestione documenti (PDF, Docx, TXT)
+├── llm/                # Integrazioni con i provider LLM (Groq)
+├── mcp_server/         # Server Model Context Protocol e verifica token
+├── src/                # Core logic:
+│   ├── retrievers/     # Tutte le strategie di ricerca RAG sopra elencate
+│   ├── cache.py 
+│   ├── chuncker.py 
+│   ├── embedder.py
+│   ├── text_processor.py
+│   ├── pipeline.py
+│   └── manager.py
+└── test/                  # Script di benchmark per i retriever disponibili
+│   ├── results/           # Risultati dei test di comparione tra i retriever     
+│   ├── faqs.json          # Json con tutte le faq utilizzate nei test           
+│   ├── run_judge.py       # Codice per eseguire la valutazione LLM-AS-JUDGE delle risposte date dai retriever 
+│   ├── test_pipeline.py   # Codice per creare e confrontare i tempi di creazione delle pipeline per ogni retriever 
+│   └── test_retriever.py  # Codice per effettuare le domande di test presenti in faqs ai retriver per poter confrontare la latenza 
 ```
 
 ---
 
-## ⚙️ Installation
+## 🚀 Setup e Installazione
 
-### Mode 1 (Automatic)
+Puoi avviare il sistema RAG-Document in due modi: tramite **Docker** (metodo consigliato per test rapidi) o tramite un'**installazione locale** classica. Altrimenti è possibile replicare i test eseguiti, ovvero confrontare tutti i retriver andando direttamente alla sezione Test e Benchmark, i risultati saranno presenti nella cartella test/results.
 
-1. **Clone the repository**
+### 1️⃣ Metodo Consigliato: Docker + MCP Inspector
 
-   ```bash
-   git clone https://github.com/inxide-srl/inx-mcp-document.git
-   cd inx-mcp-document
-   ```
+Questo metodo genera un ambiente testabile dell'intero sistema caricando i documenti presenti nella cartella `docs/`.
 
-2. **Install dependencies and set up the virtual environment**
-
-   You can either run the platform-specific setup script:
-
-   **Linux / Mac**
-   
-   ```bash
-   chmod +x setup_ubuntu.sh
-   ./setup_ubuntu.sh
-   ```
-
-   **Windows**
-
-   ```bash
-   chmod +x setup_windows.sh
-   ./setup_windows.sh
-   ```
-   
-3. **activate a virtual environment**
-
-   ```bash
-   source venv/bin/activate   # Linux/Mac
-   venv\Scripts\activate      # Windows
-   ```
-
-4. **Configure environment variables**
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   Add your API keys inside `.env` (e.g., `OPENAI_API_KEY`).
-
-### Mode 2 (Manual)
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/inxide-srl/inx-mcp-document.git
-   cd inx-mcp-document
-   ```
-
-2. **Create and activate a virtual environment**
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # Linux/Mac
-   venv\Scripts\activate      # Windows
-   ```
-
-3. **Install dependencies**
-
-   ```bash
-   pip install torch --index-url https://download.pytorch.org/whl/cpu
-   pip install -r requirements.txt
-   python -m spacy download it_core_news_sm
-   python -c "import nltk; nltk.download('punkt_tab'); nltk.download('punkt'); nltk.download('stopwords')"
-   ```
-
-4. **Configure environment variables**
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   Add your API keys inside `.env` (e.g., `OPENAI_API_KEY`).
-
----
-
-## ▶️ Usage
-
-After upload doc in '/docs'
-
-### Test multi service functions
+Costruisci e avvia i container:
 
 ```bash
-python -m tests.test_multi_service
+docker-compose up -d --build
 ```
 
----
-
-## 🖥 MCP Server
-
-Start the MCP server in http or sse mode:
-
-```bash
-python -m mcp_server.server                  # Default sse
-python -m mcp_server.server --transport sse
-python -m mcp_server.server --transport http
-```
-
-Start the MCP Inspector (Other bash):
-
-Open a new Bash and:
+In un nuovo terminale, avvia l'MCP Inspector per testare le richieste:
 
 ```bash
 npx @modelcontextprotocol/inspector
 ```
 
-### 🔗 Integration with Flowise
 
-The MCP server can be used as a data source in Flowise with the following configuration:
+### 2️⃣ Metodo Locale: Installazione da sorgente
 
-If start the server with sse transport:
-
+1. **Clona il repository ed entra nella cartella:**
 ```bash
-{
-  "url": "http://<container-port>:8000/sse" 
-}
+cd rag-document
 ```
 
-If start the server with http transport:
 
+2. **Crea e attiva un ambiente virtuale:**
 ```bash
-{
-  "url": "http://<container-port>:8000/mcp" 
-}
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
 ```
 
-Replace <container-port> with the actual port mapping of your Docker container.
+
+3. **Installa le dipendenze:**
+```bash
+pip install torch --index-url [https://download.pytorch.org/whl/cpu](https://download.pytorch.org/whl/cpu)
+pip install -r requirements.txt
+python -m spacy download it_core_news_sm
+python -c "import nltk; nltk.download('punkt_tab'); nltk.download('punkt'); nltk.download('stopwords')"
+```
+
+
+4. **Configura le variabili d'ambiente:**
+```bash
+cp .env.example .env
+```
+
+*Assicurati di inserire le tue chiavi API (es. GROQ) all'interno del file `.env`.*
+
+5. **Fai partire il Sistema:**
+```bash
+python main.py
+```
+
+Una volta che hai fatto partire il sistema devi:
+   1. Creare un db in Neo4j per tenere traccia dei vectorstore che crei.
+   1. Aggiungere i tuoi documenti nella cartella docs/
+   2. Creare un nuovo un vectorstore utilizzando le API costruito con i documenti che hai aggiunto.
+   3. Collegarti al server MCP tramite l'inspector per effettuare le richieste al sistema(ricorda che ad ogni vectorstore creato è collegata una chiave di autenticazione da dover fornire per connetterti al server mcp)
+
 
 ---
 
-## 🐳 Docker
+### Avvio dell'MCP Server in locale
 
-Build the image:
+Puoi avviare il server MCP in modalità HTTP o SSE:
 
 ```bash
-docker-compose up -d
+python -m mcp_server.server                 # Default (SSE)
+python -m mcp_server.server --transport sse
+python -m mcp_server.server --transport http
+```
+
+Anche in questo caso, puoi usare l'Inspector aprendo un altro terminale:
+
+```bash
+npx @modelcontextprotocol/inspector
 ```
 
 ---
 
-## 📊 Technical Highlights
+## 🧪 Test e Benchmark
 
-* **Hybrid chunking** → balances semantic coherence and token size
-* **Hybrid retriever** → combines BM25 keyword search with embeddings
-* **Persistent vectorstore** → supports incremental updates
-* **Modular pipeline** → easy to extend with new retrievers or LLMs
+È possibile riprodurre i test di confronto effettuati tra i vari retriever. Tutti i risultati (in formato `.xlsx`) verranno salvati automaticamente nella cartella `test/results/`.
+
+**Testare la velocità di creazione delle pipeline di tutti i retriever:**
+
+```bash
+python -m test.test_pipeline
+```
+
+**Eseguire le domande di test per ogni retriever:**
+
+```bash
+python -m test.test_retriever
+```
+
+**Valutare la correttezza delle risposte (LLM-as-a-Judge):**
+
+```bash
+python -m test.run_judge
+```
 
 ---
