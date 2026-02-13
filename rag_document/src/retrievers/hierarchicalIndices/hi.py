@@ -54,11 +54,18 @@ class HierarchicalRetriever(IRetriever):
         # 2. Genera riassunti per ogni documento (Top Level)
         summaries = []
         self.doc_ids_list = []
-        for d_id, chunks in doc_map.items():
-            full_text = " ".join([c.content for c in chunks[:5]]) # Prime parti del doc
-            summary = await self._generate_summary(full_text)
-            summaries.append(summary)
-            self.doc_ids_list.append(d_id)
+
+        for d_id, doc_chunks in doc_map.items():
+            # Itera lungo tutti i chunk del documento con step di 5
+            for i in range(0, len(doc_chunks), 5):
+                batch_chunks = doc_chunks[i:i+5]
+                full_text = " ".join([c.content for c in batch_chunks])
+                
+                summary = await self._generate_summary(full_text)
+                
+                if summary: # Evitiamo di inserire riassunti vuoti in caso di errore LLM
+                    summaries.append(summary)
+                    self.doc_ids_list.append(d_id)
 
         # 3. Indicizza i Riassunti (Top Level Index)
         summary_embeddings = await get_embeddings(summaries)
