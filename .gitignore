@@ -43,13 +43,5 @@ dist/
 .vscode/
 .idea/
 
-# Configurazioni specifiche
-services_config.json
-
 # Vectortstore locali
 vectorstore/
-vectorstore_base/
-vectorstore_50/
-vectorstore_200/
-vectorstore_100/
-vectorstore_150/

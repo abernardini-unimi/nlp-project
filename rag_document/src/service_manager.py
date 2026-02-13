@@ -22,12 +22,13 @@ from config.settings import VECTORSTORE_PATH, DOCS_FOLDER_PATH
 class MultiServiceManager:
     """Manages multiple RAG pipelines for different services with LRU caching"""
     
-    def __init__(self, max_concurrent_builds: int = 10, cache_size: int = 10):  
+    def __init__(self, max_concurrent_builds: int = 10, cache_size: int = 10, retriever_type: str = "SemanticRetriever"):  
         self.customer_tokens: Dict[str, Dict[str, List[str]]] = defaultdict(dict)
         self.pipeline_cache = LRUPipelineCache(max_size=cache_size)
         self._lock = asyncio.Lock()
         self._initialized = False
         self.max_concurrent_builds = max_concurrent_builds
+        self.retriever_type = retriever_type
         
         logger.info(f"🛠️ MultiServiceManager instantiated (max_concurrent={max_concurrent_builds}, cache={cache_size})")
 
@@ -88,7 +89,11 @@ class MultiServiceManager:
 
             vectorstore_path = Path(VECTORSTORE_PATH)
             if vectorstore_path.exists() and vectorstore_path.is_dir():
-                return True
+                logger.info(f"🗑️ Delete old vectorstore: {vectorstore_path}")
+                await asyncio.to_thread(shutil.rmtree, vectorstore_path)
+            
+            vectorstore_path.mkdir(parents=True, exist_ok=True)
+            logger.info(f"📁 New Folder vectorstore ready: {vectorstore_path}")
             
             logger.info(f"🔨 Building {len(services)} pipelines...")
             semaphore = asyncio.Semaphore(min(self.max_concurrent_builds, len(services)))
@@ -134,8 +139,8 @@ class MultiServiceManager:
                 return False
 
             # Create temporary pipeline
-            pipeline = RAGPipeline(service.name, service.customer_name)
-
+            pipeline = RAGPipeline(service.name, service.customer_name, retriever_type=self.retriever_type)
+            
             # Load documents
             upload_docs = await pipeline.load_documents_batch(service.documents)
             if len(upload_docs) == 0:
@@ -195,7 +200,7 @@ class MultiServiceManager:
                 return None
             
             # Instantiate and load
-            pipeline = RAGPipeline(service_name, customer_name)
+            pipeline = RAGPipeline(service_name, customer_name, retriever_type=self.retriever_type)
             success = await pipeline.load_pipeline(str(service_path))
             
             if not success:

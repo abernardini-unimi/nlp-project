@@ -1,9 +1,13 @@
 # --- Immagine base leggera ---
 FROM python:3.11-slim
 
+# --- Argomento di build ---
+ARG RETRIEVER_TYPE=HybridRetriever
+
 # --- Variabili di ambiente ---
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV RETRIEVER_TYPE=${RETRIEVER_TYPE}
 
 # --- Installazione dipendenze di sistema ---
 RUN apt-get update && \
@@ -22,7 +26,7 @@ RUN pip install --upgrade pip && \
     pip install sentence-transformers && \
     pip install --no-cache-dir -r requirements.txt
 
-# --- Copia del codice dell’applicazione ---
+# --- Copia del codice dell'applicazione ---
 COPY . /app
 
 # --- Download dei dataset NLTK necessari ---
@@ -35,4 +39,4 @@ RUN python -m spacy download it_core_news_sm
 EXPOSE 8080
 
 # --- Comando di avvio del server ---
-CMD ["python", "main.py"]
+CMD ["sh", "-c", "python main.py --retriever ${RETRIEVER_TYPE}"]

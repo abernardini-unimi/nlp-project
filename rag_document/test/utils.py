@@ -16,8 +16,8 @@ from src.pipeline import RAGPipeline
 customers = {
     "increso": ["increso.pdf"],
     "hotel": ["hotel.pdf"],
-    "insurance": ["unipol.pdf"],
-    "utility_provider": ["usage.txt", "payment.txt", "billing.txt", "installments.txt"],
+    "assicurazione": ["unipol.pdf"],
+    "fornitore_gas_luce": ["utenza.txt", "pagamento.txt", "fatturazione.txt", "rateizzazione.txt"],
     "whatsapp": ["whatsapp.pdf"],
     "etsy": ["Etsy.pdf"],
     "apple": ["apple.pdf"],
@@ -25,9 +25,9 @@ customers = {
 }
 
 PAGES_MAPPING = {
-    "Amazon.docx": 20, "apple.pdf": 193, "Etsy.pdf": 43, "billing.txt": 1,
-    "hotel.pdf": 4, "increso.pdf": 19, "payment.txt": 1, "installments.txt": 1,
-    "unipol.pdf": 52, "usage.txt": 1, "whatsapp.pdf": 63
+    "Amazon.docx": 20, "apple.pdf": 193, "Etsy.pdf": 43, "rateizzazione.txt": 1,
+    "hotel.pdf": 4, "increso.pdf": 19, "pagamento.txt": 1, "fatturazione.txt": 1,
+    "unipol.pdf": 52, "utenza.txt": 1, "whatsapp.pdf": 63
 }
 
 def _get_service_vectorstore_path(service_name: str, customer_name: str) -> Path:

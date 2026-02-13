@@ -12,15 +12,38 @@ from src.chuncker import semantic_chunking
 from src.text_processor import clean_text
 from src.utils import load_text_from_file
 
+from src.retrievers.contextualHeader.chr import ContextualHeaderRetriever 
+from src.retrievers.hierarchicalIndices.hi import HierarchicalRetriever  
 from src.retrievers.hybrid.hybrid_retriever import HybridRetriever
+from src.retrievers.multiQueryRAG.mqr import MultiQueryRetriever
+from src.retrievers.parentDocument.pdr import ParentDocumentRetriever
+from src.retrievers.queryTransformations.qt import QueryTransformRetriever  
+from src.retrievers.relevantSegmentExtraction.rse import RelevantSegmentRetriever
+from src.retrievers.reranking.rr import RerankingRetriever
+from src.retrievers.semantic.semantic_retriever import SemanticRetriever
+from src.retrievers.sparse.bm25_retriever import Bm25Retriever
+
+RETRIEVER_MAP = {
+    "ContextualHeaderRetriever": ContextualHeaderRetriever,
+    "HierarchicalRetriever": HierarchicalRetriever,
+    "HybridRetriever": HybridRetriever,
+    "MultiQueryRetriever": MultiQueryRetriever,
+    "ParentDocumentRetriever": ParentDocumentRetriever,
+    "QueryTransformRetriever": QueryTransformRetriever,
+    "RelevantSegmentRetriever": RelevantSegmentRetriever,
+    "RerankingRetriever": RerankingRetriever,
+    "SemanticRetriever": SemanticRetriever,
+    "Bm25Retriever": Bm25Retriever
+}
 
 class RAGPipeline:
     """Complete RAG Pipeline with chunking, indexing, and hybrid search"""
     
-    def __init__(self, service_name: str, customer_name: str, retriever=None):
+    def __init__(self, service_name: str, customer_name: str, retriever = None, retriever_type: str = "SemanticRetriever"):
         self.service_name = service_name
         self.customer_name = customer_name
-        self.retriever = HybridRetriever(service_name, customer_name) if retriever is None else retriever
+        retriever_class = RETRIEVER_MAP.get(retriever_type, SemanticRetriever)
+        self.retriever = retriever_class(service_name, customer_name) if retriever is None else retriever
         logger.debug(f"{customer_name} - {service_name} - 🚀 FastRAGPipeline initialized for service")
     
     async def add_document_async(

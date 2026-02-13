@@ -9,4 +9,5 @@ build/
 dist/
 logs/
 vectorstore/
-
+test/
+img/

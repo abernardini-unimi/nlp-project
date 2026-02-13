@@ -1,21 +1,35 @@
+import argparse
 import asyncio
 
 from db.create_database import create_single_service
 from db.functions import get_all_services_from_db
 
-async def main():
-    print("Starting MCP-Document architecture...")
+AVAILABLE_RETRIEVERS = [
+    "ContextualHeaderRetriever",
+    "HierarchicalRetriever",
+    "HybridRetriever",
+    "MultiQueryRetriever",
+    "ParentDocumentRetriever",
+    "QueryTransformRetriever",
+    "RelevantSegmentRetriever",
+    "RerankingRetriever",
+    "SemanticRetriever",
+    "Bm25Retriever"
+]
+
+async def main(retriever_type: str):
+    print(f"Starting MCP-Document architecture using {retriever_type}...")
     
     # 1. Database Creation
     existing_services = get_all_services_from_db()
     if not existing_services:    
         print("🔧 Creating sample database...")
-        for _ in range(20):
+        for _ in range(5):
             service_name, success = create_single_service()
             
     # 2. Initialize the Manager
     from src.manager import get_manager
-    manager = get_manager()
+    manager = get_manager(retriever_type=retriever_type)
     success = await manager.initialize_async()
     if not success:
         print("Error during manager initialization.")
@@ -42,8 +56,19 @@ async def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Avvia l'architettura MCP-Document con un retriever specifico.")
+    parser.add_argument(
+        "--retriever",
+        type=str,
+        choices=AVAILABLE_RETRIEVERS,
+        default="SemanticRetriever",  
+        help="Il nome della tipologia di retriever da utilizzare."
+    )
+    
+    args = parser.parse_args()
+
     try:
-        asyncio.run(main())
+        asyncio.run(main(args.retriever))
     except KeyboardInterrupt:
         print("🛑 System shutdown requested (CTRL+C)")
     except Exception as e:

@@ -130,24 +130,13 @@ def _run_mcp_sync(transport: str):
         mcp.run(transport="sse")
 
 
-async def run_mcp_server():
-    """Starts the MCP server asynchronously (non-blocking)."""
-    parser = argparse.ArgumentParser(description="Run MCP server")
-    parser.add_argument(
-        "--transport",
-        type=str,
-        choices=["sse", "http", "streamable-http"],
-        default="sse",
-        help="Specify the transport type: sse, http, or streamable-http (default: sse)",
-    )
-    args = parser.parse_args()
-
+async def run_mcp_server(transport: str = "sse"):
     loop = asyncio.get_running_loop()
     executor = ThreadPoolExecutor(max_workers=1)
 
-    # Run the MCP server in a separate thread
-    await loop.run_in_executor(executor, _run_mcp_sync, args.transport)
+    await loop.run_in_executor(executor, _run_mcp_sync, transport)
     return True
+
 
 
 # --- Main ---

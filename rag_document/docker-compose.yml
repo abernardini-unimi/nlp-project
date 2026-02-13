@@ -11,8 +11,11 @@ services:
       - NEO4J_AUTH=neo4j/00000000
 
   app:
-    build: .
-    container_name: mcp-document
+    build:
+      context: .
+      args:
+        RETRIEVER_TYPE: HybridRetriever
+    container_name: rag-document
     env_file:
       - .env
     depends_on:

@@ -40,7 +40,7 @@ async def run_tests():
         
         # Create retrievers
         retrievers = {
-            "rr": HybridRetriever(service.name, service.customer_name), 
+            "HierarchicalRetriever": HierarchicalRetriever(service.name, service.customer_name),
         }
         
         # Create pipelines in parallel
