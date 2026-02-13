@@ -95,11 +95,13 @@ class ContextualHeaderRetriever(IRetriever):
 
             # 4. Embeddings generation and FAISS indexing
             logger.debug(f"🧠 ({self.customer_name}) Generating embeddings...")
-            embeddings = await get_embeddings(enriched_texts) 
+            embeddings = await get_embeddings(enriched_texts)
+            embeddings = embeddings.astype('float32')            
+            faiss.normalize_L2(embeddings) 
 
             dimension = embeddings.shape[1]
             self.faiss_index = faiss.IndexFlatIP(dimension)
-            self.faiss_index.add(embeddings.astype("float32"))
+            self.faiss_index.add(embeddings)
 
             logger.info(f"✅ ({self.customer_name}) Indexing completed with Contextual Headers.")
             return True

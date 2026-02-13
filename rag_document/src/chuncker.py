@@ -9,60 +9,6 @@ from src.text_processor import extract_sentences
 async def semantic_chunking(
     text: str, 
     doc_name: str,
-    chunk_size: int = CHUNK_SIZE,
-    chunk_overlap: int = CHUNK_OVERLAP,
-    min_chunk_size: int = MIN_CHUNK_SIZE
-) -> List[Chunk]:
-    """Semantic chunking based on paragraphs and sentences"""
-    chunks = []
-    paragraphs = text.split('\n\n')
-    
-    current_chunk = ""
-    start_pos = 0
-    chunk_id = 0
-    
-    for para in paragraphs:
-        para = para.strip()
-        if not para:
-            continue
-        
-        sentences = await extract_sentences(para)
-        
-        for sentence in sentences:
-            if len(current_chunk + " " + sentence) > chunk_size and current_chunk:
-                if len(current_chunk) >= min_chunk_size:
-                    chunk = Chunk(
-                        id=f"{doc_name}_chunk_{chunk_id}",
-                        content=current_chunk.strip(),
-                        doc_id=doc_name,
-                        start_pos=start_pos,
-                        end_pos=start_pos + len(current_chunk)
-                    )
-                    chunks.append(chunk)
-                    chunk_id += 1
-                
-                overlap_text = " ".join(current_chunk.split()[-chunk_overlap//8:])
-                current_chunk = overlap_text + " " + sentence
-                start_pos = start_pos + len(current_chunk) - len(overlap_text) - 1
-            else:
-                current_chunk += " " + sentence if current_chunk else sentence
-    
-    if len(current_chunk) >= min_chunk_size:
-        chunk = Chunk(
-            id=f"{doc_name}_chunk_{chunk_id}",
-            content=current_chunk.strip(),
-            doc_id=doc_name,
-            start_pos=start_pos,
-            end_pos=start_pos + len(current_chunk),
-        )
-        chunks.append(chunk)
-    
-    return chunks
-
-
-async def semantic_chunking_v2(
-    text: str, 
-    doc_name: str,
     retriever_name: str, 
     doc_title: str = "", 
     chunk_size: int = CHUNK_SIZE, 

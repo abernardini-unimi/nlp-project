@@ -8,7 +8,7 @@ from config.logger import logger
 from config.settings import DOCS_FOLDER_PATH, TOP_K
 
 from schemas.classes import Document
-from src.chuncker import semantic_chunking_v2
+from src.chuncker import semantic_chunking
 from src.text_processor import clean_text
 from src.utils import load_text_from_file
 
@@ -43,7 +43,7 @@ class RAGPipeline:
             doc_title = Path(doc_name).stem # Gets file name without extension
             
             # 3. Semantic chunking with conditional logic (via retriever_name)
-            chunks = await semantic_chunking_v2(
+            chunks = await semantic_chunking(
                 cleaned_text,
                 doc_name,
                 retriever_name=retriever_name,

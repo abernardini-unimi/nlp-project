@@ -66,8 +66,11 @@ class RelevantSegmentRetriever(IRetriever):
             # 1. Obtain semantic scores for all chunks
             scores, indices = await self.semantic_search(query, len(self.chunks))
             
+            flat_scores = scores[0] if len(scores.shape) > 1 else scores
+            flat_indices = indices[0] if len(indices.shape) > 1 else indices
+
             # Map chunk_id -> score
-            chunk_scores = {idx: score for score, idx in zip(scores[0], indices[0])}
+            chunk_scores = {int(idx): float(score) for score, idx in zip(flat_scores, flat_indices) if idx != -1}
 
             # 2. Group chunks by document and sort by index
             doc_groups: Dict[str, List[int]] = {}
@@ -111,15 +114,18 @@ class RelevantSegmentRetriever(IRetriever):
             # 4. Result selection and flattening
             # Sort segments by average score and take the best ones
             all_segments.sort(key=lambda x: x[1], reverse=True)
-            
-            final_chunks = []
-            for segment, seg_score in all_segments[:top_k]: 
-                for chunk_idx, score in segment:
-                    final_chunks.append((self.chunks[chunk_idx], float(score)))
 
-            # Final sort by individual chunk score
-            final_chunks.sort(key=lambda x: x[1], reverse=True)
-            return final_chunks[:top_k]
+            if not all_segments:
+                return []
+            
+            best_segment_chunks = all_segments[0][0][:top_k]
+            
+            final_results: List[Tuple[Chunk, float]] = []
+            for chunk_idx, score in best_segment_chunks[:top_k]:
+                final_results.append((self.chunks[chunk_idx], float(score)))
+                
+            return final_results
+        
         except Exception as e:
             logger.error(f"❌ ({self.customer_name} - {self.service_name}) Error search: {e}")
             return []
