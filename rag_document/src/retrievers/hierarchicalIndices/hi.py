@@ -108,28 +108,35 @@ class HierarchicalRetriever(IRetriever):
 
     async def save_index(self, filepath: str) -> bool:
         """Salva l'indice su disco"""
-        base_path = Path(filepath) / "faiss_base"
+        base_path = Path(filepath) / "hi"
         base_path.mkdir(parents=True, exist_ok=True)
         
         index_path = base_path / "index.pkl.gz"
         faiss_path = base_path / "index.faiss"
+        summary_faiss_path = base_path / "summary_index.faiss"
 
         try:
-            if self.faiss_index is None:
+            if self.faiss_index is None or self.summary_index is None:
                 logger.error(
                     f"❌ ({self.customer_name} - {self.service_name}) "
-                    f"Indice FAISS non inizializzato"
+                    f"Indici FAISS non inizializzati"
                 )
                 return False
             
-            index_data = {'chunks': self.chunks}
+            # Aggiungiamo doc_ids_list al dizionario dei dati da serializzare
+            index_data = {
+                'chunks': self.chunks,
+                'doc_ids_list': self.doc_ids_list
+            }
             success = await save_compressed_pickle(str(index_path), index_data)
 
             if not success:
-                logger.error(f"❌ ({self.customer_name} - {self.service_name}) Errore nel salvataggio degli indici")
+                logger.error(f"❌ ({self.customer_name} - {self.service_name}) Errore nel salvataggio dei metadati degli indici")
                 return False
             
             loop = asyncio.get_event_loop()
+            
+            # Salvataggio FAISS index principale
             await loop.run_in_executor(
                 None,
                 faiss.write_index,
@@ -137,7 +144,15 @@ class HierarchicalRetriever(IRetriever):
                 str(faiss_path)
             )
 
-            logger.debug(f"✅ Indice salvato in {base_path}")
+            # Salvataggio FAISS index dei riassunti
+            await loop.run_in_executor(
+                None,
+                faiss.write_index,
+                self.summary_index,
+                str(summary_faiss_path)
+            )
+
+            logger.debug(f"✅ Indici salvati in {base_path}")
             return True
         except Exception as e:
             logger.error(f"❌ ({self.customer_name} - {self.service_name}) Errore nel salvataggio degli indici in {filepath}: {e}")
@@ -146,7 +161,7 @@ class HierarchicalRetriever(IRetriever):
 
     async def load_index(self, filepath: str) -> bool:
         """Carica l'indice da disco"""
-        base_path = Path(filepath) / "faiss_base"
+        base_path = Path(filepath) / "hi"
         
         try:
             if not base_path.exists():
@@ -158,33 +173,42 @@ class HierarchicalRetriever(IRetriever):
             
             index_path = base_path / "index.pkl.gz"
             faiss_path = base_path / "index.faiss"
+            summary_faiss_path = base_path / "summary_index.faiss"
             
-            # Verifica esistenza file
-            if not index_path.exists() or not faiss_path.exists():
+            # Verifica esistenza di tutti i file necessari
+            if not index_path.exists() or not faiss_path.exists() or not summary_faiss_path.exists():
                 logger.error(
                     f"❌ ({self.customer_name} - {self.service_name}) "
                     f"File indice mancanti in {base_path}"
                 )
                 return False
             
-            # Carica chunks
+            # Carica chunks e doc_ids_list
             index_data = await load_compressed_pickle(str(index_path))
             if index_data is None:
                 return False
             
-            # Carica FAISS index
+            self.chunks = index_data.get('chunks', [])
+            self.doc_ids_list = index_data.get('doc_ids_list', [])
+            
+            # Carica FAISS index principali e dei riassunti
             loop = asyncio.get_event_loop()
+            
             self.faiss_index = await loop.run_in_executor(
                 None,
                 faiss.read_index,
                 str(faiss_path)
             )
             
-            self.chunks = index_data['chunks']
+            self.summary_index = await loop.run_in_executor(
+                None,
+                faiss.read_index,
+                str(summary_faiss_path)
+            )
             
             logger.debug(
                 f"✅ ({self.customer_name} - {self.service_name}) "
-                f"Indice caricato da {base_path}"
+                f"Indici gerarchici caricati da {base_path}"
             )
             return True
             
